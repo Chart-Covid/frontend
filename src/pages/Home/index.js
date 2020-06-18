@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar/index"
+import MapContainer from "../../components/Map/Map";
 
 import './styles.scss'
 
@@ -12,7 +13,7 @@ export const Home = () => {
       <main className="container">
         <section className="home__map">
           <Navbar />
-          <h1>Aquí va el mapa</h1>
+          <MapContainer />
         </section>
         <section className="home__data">
           <h1>Aquí va la data</h1>
