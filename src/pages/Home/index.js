@@ -1,8 +1,8 @@
 import React from "react";
 
-import Navbar from "../../components/Navbar/index"
+import Navbar from "../../components/Navbar/index";
 
-import './styles.scss'
+import "./styles.scss";
 
 // import './scss/Variables.scss'
 
@@ -32,8 +32,12 @@ export const Home = () => {
           <div className="card card__data">
             <p>Gráfico</p>
           </div>
-          <p className="termsAndConditions"><a href="#">Términos y condiciones</a></p>
-          <p className="copyrigths"><a href="#">@Copyright 2020</a></p>
+          <p className="termsAndConditions">
+            <a href="/">Términos y condiciones</a>
+          </p>
+          <p className="copyrigths">
+            <a href="/">@Copyright 2020</a>
+          </p>
         </section>
       </main>
     </>
