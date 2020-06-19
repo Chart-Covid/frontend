@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+// import {
+//   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+// } from 'recharts';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
 import Axios from 'axios';
 
@@ -10,9 +13,8 @@ const Chart = () => {
   useEffect(() => {
     async function getData() {
       const result = await Axios.get(
-        'https://corona.lmao.ninja/v2/historical/mex',
+        'https://corona.lmao.ninja/v2/historical/ita',
       );
-      // console.log(result.data.timeline.cases)
       let data = []
       let days = []
       let cases = []
@@ -38,24 +40,39 @@ const Chart = () => {
   },[]);
 
   return (
-    // <h1>Grafico</h1>
-    <LineChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5, right: 30, left: 20, bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="deaths" stroke="#862a5c" activeDot={{ r: 8 }} />
-      <Line type="monotone" dataKey="infected" stroke="#f4a548" />
-      <Line type="monotone" dataKey="recovered" stroke="#30e2c5" />
-    </LineChart>
+    // <LineChart
+    //   width={500}
+    //   height={300}
+    //   data={data}
+    //   margin={{
+    //     top: 5, right: 30, left: 20, bottom: 5,
+    //   }}
+    // >
+    //   <CartesianGrid strokeDasharray="3 3" />
+    //   <XAxis dataKey="name" />
+    //   <YAxis />
+    //   <Tooltip />
+    //   <Legend />
+    //   <Line type="monotone" dataKey="deaths" stroke="#862a5c" activeDot={{ r: 8 }} />
+    //   <Line type="monotone" dataKey="infected" stroke="#f4a548" />
+    //   <Line type="monotone" dataKey="recovered" stroke="#30e2c5" />
+    // </LineChart>
+    <AreaChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 10, right: 30, left: 0, bottom: 0,
+          }}
+        >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Area type="monotone" dataKey="deaths" stackId="1" stroke="#862a5c" fill="#862a5c" />
+        <Area type="monotone" dataKey="infected" stackId="1" stroke="#f4a548" fill="#f4a548" />
+        <Area type="monotone" dataKey="recovered" stackId="1" stroke="#30e2c5" fill="#30e2c5" />
+      </AreaChart>
   );
 }
 
