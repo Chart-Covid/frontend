@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 
 import Navbar from "../../components/Navbar/index";
+import Map from '../../components/Map/index';
 
 import "./styles.scss";
-
-// import './scss/Variables.scss'
 
 export const Home = () => {
   return (
@@ -12,7 +11,7 @@ export const Home = () => {
       <main className="container">
         <section className="home__map">
           <Navbar />
-          <h1>Aquí va el mapa</h1>
+          <Map />
         </section>
         <section className="home__data">
           <p>Búscador</p>
