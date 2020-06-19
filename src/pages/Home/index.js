@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar/index";
+import Chart from "../../components/Chart";
 
 import "./styles.scss";
 
@@ -30,7 +31,7 @@ export const Home = () => {
             <p>Card recuperados totales</p>
           </div>
           <div className="card card__data">
-            <p>Gráfico</p>
+            <Chart />
           </div>
           <p className="termsAndConditions">
             <a href="/">Términos y condiciones</a>
