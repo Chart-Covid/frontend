@@ -24,6 +24,7 @@ $headline2: 48px;
 $headline3: 24px;
 $body1: 16px;
 $body2: 14px;
+$body3: 12px;
 
 // espacios
 $base-space: 24px;
@@ -39,7 +40,11 @@ body {
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  font-family: "Biko", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  font-size: $body3;
 }
 
 .root {
