@@ -1,25 +1,34 @@
 import React from 'react'
-import { Map, TileLayer } from 'react-leaflet'
+import { Map, TileLayer, Popup, Marker } from 'react-leaflet'
+import Datos from '../../coordenadas.json';
 
 import './styles.scss';
 
-const position = [19.432608, -99.133209]
+
 
 const MapContainer = () => {
-
   return (
     <Map
-      center={position}
-      zoom={5}
-      dragging={false}
+      center={[0,0]}
+      zoom={2}
       keyboard={false}
-      scrollWheelZoom={false}
       zoomControl={false}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
       />
+      {
+        Datos.map((dato, index) => {
+          let positionCountrie = [dato.location.lat, dato.location.lng]
+          return(
+            <Marker key={index} position={positionCountrie}>
+              <Popup>Pais: {dato.name}<br/>Confirmados: 160,000<br />Muertes: 19,080</Popup>
+            </Marker>
+
+          )
+        })
+      }
     </Map>
   );
 }
