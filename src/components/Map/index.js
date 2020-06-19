@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Coordinates from '../../coordenadas.json'
+
 import './styles.scss'
 
 class Map extends Component {
@@ -13,11 +15,9 @@ class Map extends Component {
   }
 
   renderMap() {
-    // const mapa = await fetch('https://maps.googleapis.com/maps/api/js?key=AIzaSyCfw80YXSof3XpXY-_gXRYRK9UuKiRqzyo')
-    // console.log(mapa)
     const $map = this.map.current
 
-    new window.google.maps.Map($map, {
+    const map = new window.google.maps.Map($map, {
       center: {
         lat: 0,
         lng: 0,
@@ -25,6 +25,17 @@ class Map extends Component {
       zoom: 3,
     })
 
+    console.log(Coordinates)
+
+    Coordinates.forEach(item => {
+      new window.google.maps.Marker({
+        position: {
+          lat: item.location.lat,
+          lng: item.location.lng,
+        },
+        map
+      })
+    })
   }
 
   render() {
