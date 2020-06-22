@@ -63,7 +63,7 @@ class Home extends Component {
           {/* data */}
           <section className="home__data">
             <p>Búscador</p>
-            <h1>{this.state.name}</h1>
+            <h1> {this.state.name || "Elige un país"}</h1>
             <div className="card card__infected">
               <p>Card infectados totales</p>
             </div>
