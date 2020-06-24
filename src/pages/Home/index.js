@@ -1,11 +1,9 @@
 import React from "react";
 
-import Navbar from "../../components/Navbar/index";
-<<<<<<< HEAD
+import Navbar from "../../components/Navbar/index"
+import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
-=======
 import Search from "../../components/Search/index";
->>>>>>> 0a805fe098be7941d9316bae82c8f91fc16f52db
 
 import "./styles.scss";
 
@@ -17,7 +15,7 @@ export const Home = () => {
       <main className="container">
         <section className="home__map">
           <Navbar />
-          <h1>Aquí va el mapa</h1>
+          <MapContainer />
         </section>
         <section className="home__data">
           <Search />
