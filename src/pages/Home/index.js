@@ -1,7 +1,11 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar/index";
+<<<<<<< HEAD
+import Chart from "../../components/Chart";
+=======
 import Search from "../../components/Search/index";
+>>>>>>> 0a805fe098be7941d9316bae82c8f91fc16f52db
 
 import "./styles.scss";
 
@@ -31,7 +35,7 @@ export const Home = () => {
             <p>Card recuperados totales</p>
           </div>
           <div className="card card__data">
-            <p>Gráfico</p>
+            <Chart />
           </div>
           <p className="termsAndConditions">
             <a href="/">Términos y condiciones</a>
