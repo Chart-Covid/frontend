@@ -1,13 +1,11 @@
 import React from "react";
 
-import Navbar from "../../components/Navbar/index"
+import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
 import Search from "../../components/Search/index";
 
 import "./styles.scss";
-
-// import './scss/Variables.scss'
 
 export const Home = () => {
   return (
