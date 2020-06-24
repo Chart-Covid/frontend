@@ -2,6 +2,8 @@ import React from "react";
 
 import Navbar from "../../components/Navbar/index"
 import MapContainer from "../../components/Map/Map";
+import Chart from "../../components/Chart";
+import Search from "../../components/Search/index";
 
 import "./styles.scss";
 
@@ -16,7 +18,7 @@ export const Home = () => {
           <MapContainer />
         </section>
         <section className="home__data">
-          <p>Búscador</p>
+          <Search />
           <h1>País</h1>
           <div className="card card__infected">
             <p>Card infectados totales</p>
@@ -31,7 +33,7 @@ export const Home = () => {
             <p>Card recuperados totales</p>
           </div>
           <div className="card card__data">
-            <p>Gráfico</p>
+            <Chart />
           </div>
           <p className="termsAndConditions">
             <a href="/">Términos y condiciones</a>
