@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import './styles.scss'
-import logo from '../../assets/logo.svg'
+import "./styles.scss";
+import logo from "../../assets/logo.svg";
 
 const Navbar = () => {
   return (
@@ -10,12 +10,10 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
       </div>
       <div className="navbar__about">
-        <h1>
-          About
-        </h1>
+        <h1>About</h1>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
