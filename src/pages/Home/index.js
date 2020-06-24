@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Navbar from "../../components/Navbar/index"
 import MapContainer from "../../components/Map/Map";
@@ -7,9 +7,14 @@ import Search from "../../components/Search/index";
 
 import "./styles.scss";
 
-// import './scss/Variables.scss'
-
 export const Home = () => {
+  useEffect(() => {
+    if (navigator.geolocation) { //check if geolocation is available
+        navigator.geolocation.getCurrentPosition(function(position){
+          console.log(position);
+        });
+    }
+  },[])
   return (
     <>
       <main className="container">
