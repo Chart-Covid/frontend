@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar/index";
+import Search from "../../components/Search/index";
 
 import "./styles.scss";
 
@@ -15,7 +16,7 @@ export const Home = () => {
           <h1>Aquí va el mapa</h1>
         </section>
         <section className="home__data">
-          <p>Búscador</p>
+          <Search />
           <h1>País</h1>
           <div className="card card__infected">
             <p>Card infectados totales</p>
