@@ -1,52 +1,11 @@
 import React, { Component } from 'react';
 
 import Navbar from "../../components/Navbar/index";
-import Coordinates from '../../coordenadas.json'
-// import Map from '../../components/Map/index';
+import Top10 from "../../components/Top10/index";
 
 import "./styles.scss";
 
 class Home extends Component {
-  state = {
-    name: ""
-  }
-
-  constructor(props) {
-    super(props);
-    this.map = React.createRef();
-  }
-
-  componentDidMount() {
-    this.renderMap()
-  }
-
-
-  renderMap() {
-    const $map = this.map.current
-
-    const map = new window.google.maps.Map($map, {
-      center: {
-        lat: 0,
-        lng: 0,
-      },
-      zoom: 3,
-    })
-
-    Coordinates.forEach(item => {
-      const marker = new window.google.maps.Marker({
-        position: {
-          lat: item.location.lat,
-          lng: item.location.lng,
-        },
-        map
-      })
-      marker.addListener('click', () => {
-        this.setState({ name: item.name })
-      })
-    })
-  }
-
-
   render() {
     return (
       <>
@@ -55,26 +14,30 @@ class Home extends Component {
           {/* mapa */}
           <section className="home__map">
             <Navbar />
-            <div className="map" ref={this.map} >
-            </div>
+            <h1>mapa 🌍</h1>
+            <Top10 />
           </section>
           {/* mapa */}
 
           {/* data */}
           <section className="home__data">
             <p>Búscador</p>
-            <h1> {this.state.name || "Elige un país"}</h1>
+            <h1>País</h1>
             <div className="card card__infected">
-              <p>Card infectados totales</p>
+              <p>Total de casos infectados</p>
+              <h1>0</h1>
             </div>
             <div className="card card__activeCases">
-              <p>Card de indectados activos </p>
+              <p>Casos activos</p>
+              <h1>0</h1>
             </div>
             <div className="card card__deadths">
-              <p>Card número de muertes totales</p>
+              <p>Total de muertes</p>
+              <h1>0</h1>
             </div>
             <div className="card card__recovered">
-              <p>Card recuperados totales</p>
+              <p>Total de recuperados</p>
+              <h1>0</h1>
             </div>
             <div className="card card__data">
               <p>Gráfico</p>
