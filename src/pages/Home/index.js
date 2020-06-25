@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import publicIp from 'public-ip';
+import Axios from "axios";
 
 import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
@@ -10,14 +12,19 @@ import Datos from "../../coordenadas.json";
 import "./styles.scss";
 
 export const Home = () => {
+  const [country, setCountry] = useState('Pais');
+  const [countryFlag, setCountryFlag] = useState('');
   useEffect(() => {
-    if (navigator.geolocation) { //check if geolocation is available
-        navigator.geolocation.getCurrentPosition(function(position){
-
-          console.log(position.coords.latitude);
-          console.log(position.coords.longitude);
-        });
+    async function fetchData() {
+      const ip = await publicIp.v4();
+      const pais = await Axios.get(`http://www.geoplugin.net/json.gp?ip=${ip}`)
+        .then(response => response.data.geoplugin_countryName)
+        .catch(error => console.error(error))
+      const flag = Datos.filter(dato => dato.name === pais);
+      setCountryFlag(flag[0].flag);
+      setCountry(pais);
     }
+    fetchData();
   },[])
   return (
     <>
@@ -29,7 +36,8 @@ export const Home = () => {
         </section>
         <section className="home__data">
           <Search />
-          <h1>País</h1>
+          <h1 className="home__data--country">{country}</h1>
+          <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
           <div className="card card__infected">
               <p>Total de casos infectados</p>
               <h1>0</h1>
@@ -38,7 +46,7 @@ export const Home = () => {
               <p>Casos activos</p>
               <h1>0</h1>
             </div>
-            <div className="card card__deadths">
+            <div className="card card__deaths">
               <p>Total de muertes</p>
               <h1>0</h1>
             </div>
