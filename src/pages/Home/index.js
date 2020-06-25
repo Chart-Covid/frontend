@@ -14,15 +14,22 @@ import "./styles.scss";
 export const Home = () => {
   const [country, setCountry] = useState('Pais');
   const [countryFlag, setCountryFlag] = useState('');
+  const [casos, setCasos] = useState({});
   useEffect(() => {
     async function fetchData() {
       const ip = await publicIp.v4();
       const pais = await Axios.get(`http://www.geoplugin.net/json.gp?ip=${ip}`)
         .then(response => response.data.geoplugin_countryName)
         .catch(error => console.error(error))
+      setCountry(pais);
+
       const flag = Datos.filter(dato => dato.name === pais);
       setCountryFlag(flag[0].flag);
-      setCountry(pais);
+
+      const casos = await Axios.get(`https://chart-covid.herokuapp.com/countries/${pais}/`)
+        .then(response => response.data)
+        .catch(error => console.error(error))
+      setCasos(casos);
     }
     fetchData();
   },[])
@@ -40,22 +47,22 @@ export const Home = () => {
           <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
           <div className="card card__infected">
               <p>Total de casos infectados</p>
-              <h1>0</h1>
+              <h1>{casos.total_cases}</h1>
             </div>
             <div className="card card__activeCases">
               <p>Casos activos</p>
-              <h1>0</h1>
+              <h1>{casos.active_cases}</h1>
             </div>
             <div className="card card__deaths">
               <p>Total de muertes</p>
-              <h1>0</h1>
+              <h1>{casos.total_deaths}</h1>
             </div>
             <div className="card card__recovered">
               <p>Total de recuperados</p>
-              <h1>1</h1>
+              <h1>{casos.total_Recovered}</h1>
             </div>
           <div className="card card__data">
-            <Chart />
+            <Chart historical={casos.historical} />
           </div>
           <p className="termsAndConditions">
             <a href="/">Términos y condiciones</a>
