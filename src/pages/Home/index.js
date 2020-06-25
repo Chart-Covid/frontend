@@ -13,8 +13,13 @@ export const Home = () => {
   const [country, setCountry] = useState('Pais');
   const [countryFlag, setCountryFlag] = useState('');
   const [casos, setCasos] = useState({});
+  const [topCountries, setTopCountries] = useState({});
   useEffect(() => {
     async function fetchData() {
+      const top = await Axios.get(`https://chart-covid.herokuapp.com/top_ten/`)
+      .then(response => response.data['new-cases'])
+      .catch(error => console.error(error))
+      setTopCountries(top);
       const ip = await publicIp.v4();
       const pais = await Axios.get(`http://www.geoplugin.net/json.gp?ip=${ip}`)
         .then(response => response.data.geoplugin_countryName)
@@ -39,7 +44,7 @@ export const Home = () => {
             <Navbar />
           </div>
           <div className="home__map--mapContainer">
-            <MapContainer Datos={Datos} />
+            <MapContainer Datos={Datos} topCountries={topCountries} />
           </div>
         </section>
         <section className="home__data">
