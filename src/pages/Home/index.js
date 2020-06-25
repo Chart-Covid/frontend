@@ -65,7 +65,7 @@ export const Home = () => {
             <Chart historical={casos.historical} />
           </div>
           <p className="termsAndConditions">
-            <a href="/">Términos y condiciones</a>
+            <a href="../About/index.js">Términos y condiciones</a>
           </p>
           <p className="copyrigths">
             <a href="/">@Copyright 2020</a>

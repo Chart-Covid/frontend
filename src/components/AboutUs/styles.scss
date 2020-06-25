@@ -1,0 +1,83 @@
+@import '../../scss/Variables.scss';
+
+.team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.aboutus__container {
+    margin: 40px;
+    padding: 0;
+    font-size: $headline3;
+}
+.aboutus__titleone {
+    margin-top: 30px;
+    padding-top: 50px;
+    padding-left: 45px;
+    border: 10px;
+    font-size: $headline1;
+}
+
+.aboutus__text {
+    margin-left: 45px;
+    padding: 0;
+    font-size: $body1;
+    text-align: left;
+}
+
+.aboutus__tittletwo {
+    margin-left: 45px;
+    padding-top: 10px;
+    border: 10px;
+    font-size: $headline2;
+}
+
+.team__title {
+    color: black;
+    margin-left: 50px;
+}
+
+.team__career {
+    color: black;
+    margin-left: 20px;
+}
+
+.team__one {
+    background-color: white;
+    padding: 1em;
+    border-radius: 10px;
+    width: 290px;
+    height: 110px;
+    margin-top: 2px;
+    margin-left: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.team__photo {
+    display: flex;
+    align-self: flex-start;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+.team__social {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10px;
+}
+.team__twit {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 120px;
+    margin-left: 20px;
+}
+.team__link {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 120px;
+}
