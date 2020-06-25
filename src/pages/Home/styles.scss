@@ -6,15 +6,7 @@
 }
 
 .home__map {
-  width: 100%;
-  height: 100%;
   background-color: $color-brand;
-  display: flex;
-  flex-direction: column;
-  &--top {
-    display: none;
-    // width: 100%;
-  }
 }
 
 .home__data {

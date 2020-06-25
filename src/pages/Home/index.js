@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
 import Search from "../../components/Search/index";
-import Top10 from "../../components/Top10/index";
 
 import Datos from "../../coordenadas.json";
 import "./styles.scss";
@@ -42,9 +41,6 @@ export const Home = () => {
           </div>
           <div className="home__map--mapContainer">
             <MapContainer Datos={Datos} />
-          </div>
-          <div className="home__map--top">
-            <Top10 />
           </div>
         </section>
         <section className="home__data">
