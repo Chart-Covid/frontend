@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import Context from './Context';
 
 import App from './App';
 
 import './scss/Variables.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Context.Provider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Context.Provider>,
   document.getElementById('root')
 );
 
