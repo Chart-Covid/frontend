@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import ArrowUp from "./ArrowUp"
 import "./styles.scss"
 
 const Top10 = () => {
   const [toggle, setToggle] = useState(false)
-  // const holi = "holi "
-
 
     const handleClick = () => {
       if (toggle === false) {
@@ -16,18 +14,24 @@ const Top10 = () => {
       }
     }
 
-
   return (
     <footer className={toggle ? "top10" : "top10 top10Description"} onClick={handleClick} >
       <div className="top10__title">
-        <ArrowUp />
-        <p>Top 10</p>
-        {
-          toggle ? "" : <div className="carrousel">
-            <h1>Carrousel</h1>
+        <div>
+          <ArrowUp />
+          <p>Top 10</p>
+        </div>
+      </div>
+      {
+          toggle ? "" : 
+          <div className="carrousel">
+            {
+              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+                return <div class="cards__top10">brasil</div>;
+              })
+            }
           </div>
         }
-      </div>
     </footer>
   )
 }
