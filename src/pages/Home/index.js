@@ -48,21 +48,15 @@ export const Home = () => {
           <>
             <main className="container">
               <section className="home__map">
-                <div className="home__map--navbar">
-                  <Navbar />
-                </div>
-                <div className="home__map--mapContainer">
-                  <MapContainer Datos={Datos} topCountries={topCountries} />
-                </div>
+                <Navbar />
+                <MapContainer Datos={Datos} topCountries={topCountries} />
               </section>
               <section className="home__data">
-                <div className="home__data--countryContainer">
-                  <h1 className="home__data--country">{countryName || country}</h1>
-                  <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
-                </div>
+                <h1 className="home__data--country">{countryName || country}</h1>
+                <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
                 <div className="card card__infected">
-                    <p>Total de casos infectados</p>
-                    <h1>{casos.total_cases}</h1>
+                  <p>Total de casos infectados</p>
+                  <h1>{casos.total_cases}</h1>
                 </div>
                 <div className="card card__activeCases">
                   <p>Casos activos</p>
@@ -76,9 +70,15 @@ export const Home = () => {
                   <p>Total de recuperados</p>
                   <h1>{casos.total_Recovered}</h1>
                 </div>
-                <div className="home__data--chart">
+                <div className="card card__data">
                   <Chart historical={casos.historical} />
                 </div>
+                <p className="termsAndConditions">
+                  <a href="/">Términos y condiciones</a>
+                </p>
+                <p className="copyrigths">
+                  <a href="/">@Copyright 2020</a>
+                </p>
               </section>
             </main>
           </>
