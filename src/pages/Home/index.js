@@ -55,33 +55,33 @@ export const Home = () => {
             <h1 className="home__data--country">{country}</h1>
             <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
           </div>
-          <div className="card__container">
-            <div className="card__container--infected">
-                <p>Total de casos infectados</p>
-                <h1>{casos.total_cases}</h1>
-            </div>
-            <div className="card__container--activeCases">
-              <p>Casos activos</p>
-              <h1>{casos.active_cases}</h1>
-            </div>
-            <div className="card__container--deaths">
-              <p>Total de muertes</p>
-              <h1>{casos.total_deaths}</h1>
-            </div>
-            <div className="card__container--recovered">
-              <p>Total de recuperados</p>
-              <h1>{casos.total_Recovered}</h1>
-            </div>
+          <div className="card card__infected">
+              <p>Total de casos infectados</p>
+              <h1>{casos.total_cases}</h1>
+          </div>
+          <div className="card card__activeCases">
+            <p>Casos activos</p>
+            <h1>{casos.active_cases}</h1>
+          </div>
+          <div className="card card__deaths">
+            <p>Total de muertes</p>
+            <h1>{casos.total_deaths}</h1>
+          </div>
+          <div className="card card__recovered">
+            <p>Total de recuperados</p>
+            <h1>{casos.total_Recovered}</h1>
           </div>
           <div className="home__data--chart">
             <Chart historical={casos.historical} />
           </div>
-          {/* <p className="termsAndConditions">
-            <a href="/">Términos y condiciones</a>
-          </p>
-          <p className="copyrigths">
-            <a href="/">@Copyright 2020</a>
-          </p> */}
+          <div className="home__data--info">
+            <p className="termsAndConditions">
+              <a href="/">Términos y condiciones</a>
+            </p>
+            <p className="copyrigths">
+              <a href="/">Copyright © 2020</a>
+            </p>
+          </div>
         </section>
       </main>
     </>
