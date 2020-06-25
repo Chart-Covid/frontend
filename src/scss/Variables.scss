@@ -1,0 +1,53 @@
+// colores
+$color-brand: #30e2c5;
+$color-background-1: #1c272c;
+$color-background-2: #fbfbfb;
+$color-cards: white;
+
+$color-text-black: #0b0c1d;
+$color-text-white: #fbfbfb;
+
+$color-infected: #f4a548;
+$color-deaths: #862a5c;
+$color-activeCases: #632a86;
+
+//fuentes
+@font-face {
+  font-family: Biko;
+  src: url(../assets/Biko.otf)
+}
+$font-body: "Roboto", sans-serif;
+
+//tamaños
+$headline1: 60px;
+$headline2: 48px;
+$headline3: 24px;
+$body1: 16px;
+$body2: 14px;
+$body3: 12px;
+
+// espacios
+$base-space: 24px;
+
+//generales
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  font-size: $body3;
+}
+
+.root {
+  width: inherit;
+  height: inherit;
+}
