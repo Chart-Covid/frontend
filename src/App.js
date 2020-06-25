@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home/index.js";
 
 function App() {
   return (

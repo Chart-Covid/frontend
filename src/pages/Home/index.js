@@ -1,17 +1,21 @@
 import React, { useEffect } from "react";
 
-import Navbar from "../../components/Navbar/index"
+import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
 import Search from "../../components/Search/index";
+import Top10 from "../../components/Top10/index";
 
+import Datos from "../../coordenadas.json";
 import "./styles.scss";
 
 export const Home = () => {
   useEffect(() => {
     if (navigator.geolocation) { //check if geolocation is available
         navigator.geolocation.getCurrentPosition(function(position){
-          console.log(position);
+
+          console.log(position.coords.latitude);
+          console.log(position.coords.longitude);
         });
     }
   },[])
@@ -20,23 +24,28 @@ export const Home = () => {
       <main className="container">
         <section className="home__map">
           <Navbar />
-          <MapContainer />
+          <MapContainer Datos={Datos} />
+          <Top10 />
         </section>
         <section className="home__data">
           <Search />
           <h1>País</h1>
           <div className="card card__infected">
-            <p>Card infectados totales</p>
-          </div>
-          <div className="card card__activeCases">
-            <p>Card de indectados activos </p>
-          </div>
-          <div className="card card__deadths">
-            <p>Card número de muertes totales</p>
-          </div>
-          <div className="card card__recovered">
-            <p>Card recuperados totales</p>
-          </div>
+              <p>Total de casos infectados</p>
+              <h1>0</h1>
+            </div>
+            <div className="card card__activeCases">
+              <p>Casos activos</p>
+              <h1>0</h1>
+            </div>
+            <div className="card card__deadths">
+              <p>Total de muertes</p>
+              <h1>0</h1>
+            </div>
+            <div className="card card__recovered">
+              <p>Total de recuperados</p>
+              <h1>1</h1>
+            </div>
           <div className="card card__data">
             <Chart />
           </div>
@@ -51,3 +60,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home
