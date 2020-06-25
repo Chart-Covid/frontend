@@ -13,15 +13,13 @@ const MapContainer = ({ Datos, topCountries={} }) => {
       {Datos.map((dato, index) => {
         let opacity;
         (Object.keys(topCountries).includes(dato.name)) ? opacity = 1 : opacity = 0.5;
-        let positionCountrie = [dato.location.lat, dato.location.lng];
+
+        let positionCountry = [dato.location.lat, dato.location.lng];
+
         return (
-          <Marker key={index} position={positionCountrie} opacity={opacity}>
+          <Marker key={index} position={positionCountry} opacity={opacity}>
             <Popup>
-              Pais: {dato.name}
-              <br />
-              Confirmados: 160,000
-              <br />
-              Muertes: 19,080
+              {dato.name}
             </Popup>
           </Marker>
         );
