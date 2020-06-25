@@ -19,7 +19,7 @@ const Top10 = () => {
       <div className="top10__title">
         <div>
           <ArrowUp />
-          <p>Top 10</p>
+          <p>Top 10 infectados</p>
         </div>
       </div>
       {
@@ -27,7 +27,10 @@ const Top10 = () => {
           <div className="carrousel">
             {
               [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
-                return <div class="cards__top10">brasil</div>;
+                return <div class="cards__top10">
+                  <p>1. País</p>
+                  <h1>0</h1>
+                </div>;
               })
             }
           </div>
