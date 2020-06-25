@@ -1,10 +1,10 @@
 import React from "react";
 import { Map, TileLayer, Popup, Marker } from "react-leaflet";
-import Datos from "../../coordenadas.json";
+
 
 import "./styles.scss";
 
-const MapContainer = () => {
+const MapContainer = ({ Datos }) => {
   return (
     <Map center={[0, 0]} zoom={2} keyboard={false} zoomControl={false}>
       <TileLayer
