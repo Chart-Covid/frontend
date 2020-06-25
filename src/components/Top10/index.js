@@ -23,11 +23,11 @@ const Top10 = () => {
         </div>
       </div>
       {
-          toggle ? "" : 
+          toggle ? "" :
           <div className="carrousel">
             {
-              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
-                return <div class="cards__top10">brasil</div>;
+              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => {
+                return <div key={`top-${index}`} className="cards__top10">brasil</div>;
               })
             }
           </div>

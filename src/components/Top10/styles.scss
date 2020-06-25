@@ -1,11 +1,9 @@
 @import "../../scss/Variables.scss";
 
 .top10 {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  // position: absolute;
+  // bottom: 0;
   height: 72px;
-  display: block;
   background-color: $color-background-1;
   overflow: hidden;
   overflow-x: scroll;
