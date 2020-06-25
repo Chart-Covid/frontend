@@ -5,7 +5,6 @@ import Axios from "axios";
 import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
-import Search from "../../components/Search/index";
 
 import Datos from "../../coordenadas.json";
 import "./styles.scss";
@@ -44,9 +43,6 @@ export const Home = () => {
           </div>
         </section>
         <section className="home__data">
-          <div className="home__data--search">
-            <Search />
-          </div>
           <div className="home__data--countryContainer">
             <h1 className="home__data--country">{country}</h1>
             <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
@@ -69,14 +65,6 @@ export const Home = () => {
           </div>
           <div className="home__data--chart">
             <Chart historical={casos.historical} />
-          </div>
-          <div className="home__data--info">
-            <p className="termsAndConditions">
-              <a href="/">Términos y condiciones</a>
-            </p>
-            <p className="copyrigths">
-              <a href="/">Copyright © 2020</a>
-            </p>
           </div>
         </section>
       </main>
