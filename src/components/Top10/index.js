@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import ArrowUp from "./ArrowUp"
 import "./styles.scss"
 
-const Top10 = () => {
-  const [toggle, setToggle] = useState(false)
+export const Top10 = () => {
+  const [toggle, setToggle] = useState(true)
 
     const handleClick = () => {
       if (toggle === false) {
@@ -19,15 +19,18 @@ const Top10 = () => {
       <div className="top10__title">
         <div>
           <ArrowUp />
-          <p>Top 10</p>
+          <p>Top 10 infectados</p>
         </div>
       </div>
       {
-          toggle ? "" :
+          toggle ? "" : 
           <div className="carrousel">
             {
-              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => {
-                return <div className="cards__top10" key={`top ${index}`}>brasil</div>;
+              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+                return <div class="cards__top10">
+                  <p>1. País</p>
+                  <h1>0</h1>
+                </div>;
               })
             }
           </div>
@@ -36,4 +39,3 @@ const Top10 = () => {
   )
 }
 
-export default Top10

@@ -1,12 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
+
 import Home from "./pages/Home/index.js";
-import About from "./pages/About/index.js";
+
+import About from "./pages/About";
+
+import Context from "./Context";
 
 function App() {
   return (
-    <Fragment>
+    <Context.Provider>
       <Home />
-    </Fragment>
+    </Context.Provider>
   );
 }
 

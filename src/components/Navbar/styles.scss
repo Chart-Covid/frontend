@@ -1,17 +1,17 @@
 @import '../../scss/Variables.scss';
 
 .navbar {
-  position: absolute;
-  top: 0;
+  position: absolute;	
+  top: 0;	
   z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
   height: 72px;
   font-family: "Biko", sans-serif;
   background-color: $color-background-1;
   position: fixed;
+  width: 60%;
   top: 0;
   left: 0;
   z-index: 1000;
