@@ -1,0 +1,28 @@
+@import '../../scss/Variables.scss';
+
+.navbarTwo {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    font-family: "Biko", sans-serif;
+    background-color: $color-background-1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar__logo {
+    width: 82px;
+    margin-left: $base-space;
+}
+
+.navbar__about {
+    color: $color-text-white;
+    margin-right: $base-space;
+}
