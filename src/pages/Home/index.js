@@ -54,7 +54,7 @@ export const Home = () => {
               </section>
               <section className="home__data">
                 <h1 className="home__data--country">{countryName || country}</h1>
-                <img className="home__data--flag" src={countryFlag} alt="Flag country" />
+                <img className="home__data--flag" src={countryFlag || ""} alt="Flag country" />
                 <div className="card card__infected">
                   <p>Total de casos infectados</p>
                   <h1>{casos.total_cases}</h1>
