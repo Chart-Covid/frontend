@@ -1,61 +1,60 @@
 import React, { useEffect, useState } from "react";
-import publicIp from 'public-ip';
+import publicIp from "public-ip";
 import Axios from "axios";
 import Context from "../../Context";
 
 import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
-import { Top10 } from "../../components/Top10"
+import { Top10 } from "../../components/Top10";
 
 import Datos from "../../coordenadas.json";
 import "./styles.scss";
 
 export const Home = () => {
-  const [country, setCountry] = useState('Pais');
-  const [countryFlag, setCountryFlag] = useState('');
+  const [country, setCountry] = useState("Pais");
+  const [countryFlag, setCountryFlag] = useState("");
   const [casos, setCasos] = useState({});
   const [topCountries, setTopCountries] = useState({});
   useEffect(() => {
     async function fetchData() {
       const top = await Axios.get(`https://chart-covid.herokuapp.com/top_ten/`)
-      .then(response => response.data['total-cases'])
-      .catch(error => console.error(error))
+        .then((response) => response.data["total-cases"])
+        .catch((error) => console.error(error));
       setTopCountries(top);
       const ip = await publicIp.v4();
       const pais = await Axios.get(`http://www.geoplugin.net/json.gp?ip=${ip}`)
-        .then(response => response.data.geoplugin_countryName)
-        .catch(error => console.error(error))
+        .then((response) => response.data.geoplugin_countryName)
+        .catch((error) => console.error(error));
       setCountry(pais);
 
       changeCountry(pais);
     }
     fetchData();
-  },[])
+  }, []);
   const changeCountry = async (name) => {
-    const flag = Datos.filter(dato => dato.name === name);
+    const flag = Datos.filter((dato) => dato.name === name);
     setCountryFlag(flag[0].flag);
     const casos = await Axios.get(`https://chart-covid.herokuapp.com/countries/${name}/`)
-      .then(response => response.data)
-      .catch(error => console.error(error))
+      .then((response) => response.data)
+      .catch((error) => console.error(error));
     setCasos(casos);
-  }
+  };
   return (
-  <Context.Consumer>
-    {
-      ({ countryName, changeName}) => {
-        if(countryName) changeCountry(countryName);
-        return(
+    <Context.Consumer>
+      {({ countryName, changeName }) => {
+        if (countryName) changeCountry(countryName);
+        return (
           <>
             <main className="container">
               <section className="home__map">
                 <Navbar />
                 <MapContainer Datos={Datos} topCountries={topCountries} />
-                <Top10 />
+                <Top10 topCountries={topCountries} />
               </section>
               <section className="home__data">
                 <h1 className="home__data--country">{countryName || country}</h1>
-                <img className="home__data--flag" src={countryFlag} alt="Flag country"/>
+                <img className="home__data--flag" src={countryFlag} alt="Flag country" />
                 <div className="card card__infected">
                   <p>Total de casos infectados</p>
                   <h1>{casos.total_cases}</h1>
@@ -84,11 +83,9 @@ export const Home = () => {
               </section>
             </main>
           </>
-
-        )
-      }
-    }
-  </Context.Consumer>
+        );
+      }}
+    </Context.Consumer>
   );
 };
-export default Home
+export default Home;

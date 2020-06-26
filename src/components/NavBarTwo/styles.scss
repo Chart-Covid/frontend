@@ -15,6 +15,11 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    a {
+        color: $color-text-white;
+        text-decoration: none;
+        font-size: $headline3;
+    }
 }
 
 .navbar__logo {
