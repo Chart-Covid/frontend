@@ -37,7 +37,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={beto} alt="beto" />
           <h1 className="team__title">Beto</h1>
-          <p className="team__career">Frontend Enginer</p>
+          <p className="team__career">Frontend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
@@ -46,7 +46,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={erick} alt="erick" />
           <h1 className="team__title">Erick</h1>
-          <p className="team__career">Frontend Enginer</p>
+          <p className="team__career">Frontend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
@@ -55,7 +55,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={antony} alt="antony" />
           <h1 className="team__title">Antony</h1>
-          <p className="team__career">Backend Enginer</p>
+          <p className="team__career">Backend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
@@ -64,7 +64,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={byron} alt="byron" />
           <h1 className="team__title">Byron</h1>
-          <p className="team__career">Backend Enginer</p>
+          <p className="team__career">Backend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
@@ -73,7 +73,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={migue} alt="migue" />
           <h1 className="team__title">Miguel</h1>
-          <p className="team__career">Frontend Enginer</p>
+          <p className="team__career">Frontend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
@@ -82,7 +82,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={jorge} alt="jorge" />
           <h1 className="team__title">Jorge</h1>
-          <p className="team__career">Backend Enginer</p>
+          <p className="team__career">Backend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
@@ -91,7 +91,7 @@ export const AboutUs = () => {
         <section className="team__one">
           <img className="team__photo" src={ernesto} alt="ernesto" />
           <h1 className="team__title">Ernesto</h1>
-          <p className="team__career">Frontend Enginer</p>
+          <p className="team__career">Frontend Developer</p>
           <div className="team__social">
             <img className="team__twit" src={twit} alt="twitter" />
             <img className="team__link" src={linkedin} alt="link" />
