@@ -53,8 +53,10 @@ export const Home = () => {
                 <Top10 topCountries={topCountries} />
               </section>
               <section className="home__data">
-                <h1 className="home__data--country">{countryName || country}</h1>
-                <img className="home__data--flag" src={countryFlag || ""} alt="Flag country" />
+                <div className="home__data--container">
+                  <h1 className="home__data--country">{countryName || country}</h1>
+                  <img className="home__data--flag" src={countryFlag || ""} alt="Flag country" />
+                </div>
                 <div className="card card__infected">
                   <p>Total de casos infectados</p>
                   <h1>{casos.total_cases}</h1>
