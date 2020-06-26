@@ -6,6 +6,7 @@ import Context from "../../Context";
 import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
+import { Top10 } from "../../components/Top10"
 
 import Datos from "../../coordenadas.json";
 import "./styles.scss";
@@ -50,6 +51,7 @@ export const Home = () => {
               <section className="home__map">
                 <Navbar />
                 <MapContainer Datos={Datos} topCountries={topCountries} />
+                <Top10 />
               </section>
               <section className="home__data">
                 <h1 className="home__data--country">{countryName || country}</h1>
