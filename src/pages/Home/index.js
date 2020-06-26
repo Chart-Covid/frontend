@@ -23,8 +23,8 @@ export const Home = () => {
         .catch((error) => console.error(error));
       setTopCountries(top);
       const ip = await publicIp.v4();
-      const pais = await Axios.get(`http://www.geoplugin.net/json.gp?ip=${ip}`)
-        .then((response) => response.data.geoplugin_countryName)
+      const pais = await Axios.get(`https://api.ipfind.com/?ip=${ip}`)
+        .then((response) => response.data.country)
         .catch((error) => console.error(error));
       setCountry(pais);
 
