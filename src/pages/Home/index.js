@@ -6,7 +6,7 @@ import Context from "../../Context";
 import Navbar from "../../components/Navbar/index";
 import MapContainer from "../../components/Map/Map";
 import Chart from "../../components/Chart";
-import Top10 from "../../components/Top10/index"
+import { Top10 } from "../../components/Top10"
 
 import Datos from "../../coordenadas.json";
 import "./styles.scss";

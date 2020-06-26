@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ArrowUp from "./ArrowUp"
 import "./styles.scss"
 
-const Top10 = () => {
+export const Top10 = () => {
   const [toggle, setToggle] = useState(true)
 
     const handleClick = () => {
@@ -39,4 +39,3 @@ const Top10 = () => {
   )
 }
 
-export default Top10
